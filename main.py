@@ -17,10 +17,6 @@ fundo = pygame.transform.scale(fundo,(800,500))
 jogador = Jogadorjogo("zimagens/copo.png", 45, 50, 355, 420)
 
 #LISTA DOS OBJETOS JOGADOS
-lista_objetos = [Doce("zimagens/doce1.png", 45, 50),
-        
-]
-obj = lista_objetos[0]
 
 #CONFIGURAÇÃO PARA RODAR
 clock = pygame.time.Clock()
@@ -39,10 +35,10 @@ while rodando == True:
 
     #JOGADOR APARECENDO e ANDANDO
     jogador.movimento(pygame.K_LEFT, pygame.K_RIGHT)
-    jogador.apareça(tela)
+    jogador.apareça(tela)   
 
-    obj.apareça(tela)
-    obj.movimento()
+
+
 
 
 
