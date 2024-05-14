@@ -9,7 +9,7 @@ class Doce:
         self.imagem = pygame.image.load(arquivo_imagem)
         self.largura = largura_imagem
         self.altura = altura_imagem
-        self.velocidade = random.randint(5, 10)
+        self.velocidade = random.randint(2, 5)
 
         self.imagem = pygame.transform.scale(self.imagem, (self.largura, self.altura))
         
@@ -25,7 +25,7 @@ class Doce:
         else:
             self.posição_y = 0-self.altura
             self.posição_x = random.randint(0,800-self.largura)
-            self.velocidade = random.randint(5, 10)
+            self.velocidade = random.randint(2, 5)
 
 class Vegetais:
 
@@ -33,7 +33,7 @@ class Vegetais:
         self.imagem = pygame.image.load(arquivo_imagem)
         self.largura = largura_imagem
         self.altura = altura_imagem
-        self.velocidade = random.randint(5, 10)
+        self.velocidade = random.randint(3, 8)
 
         self.imagem = pygame.transform.scale(self.imagem, (self.largura, self.altura))
         
@@ -49,4 +49,4 @@ class Vegetais:
         else:
             self.posição_y = 0-self.altura
             self.posição_x = random.randint(0,800-self.largura)
-            self.velocidade = random.randint(5, 10)
+            self.velocidade = random.randint(3, 8)
