@@ -16,6 +16,10 @@ class Doce:
         self.posição_x = random.randint(0,800-self.largura)
         self.posição_y = 0-self.altura
 
+        #MASCARA
+        self.mascara = pygame.mask.from_surface(self.imagem)
+
+
     def apareça (self, tela):
         tela.blit(self.imagem, (self.posição_x, self.posição_y))
 
@@ -40,6 +44,10 @@ class Vegetais:
         self.posição_x = random.randint(0,800-self.largura)
         self.posição_y = 0-self.altura
 
+
+        #MASCARA
+        self.mascara = pygame.mask.from_surface(self.imagem)
+        
     def apareça (self, tela):
         tela.blit(self.imagem, (self.posição_x, self.posição_y))
 

@@ -18,6 +18,9 @@ class Jogadorjogo:
         self.posição_x = posição_inicial_x
         self.posição_y = posição_inicial_y
 
+        #MASCARA
+        self.mascara = pygame.mask.from_surface(self.imagem)
+
 
 
     def apareça (self, tela):
