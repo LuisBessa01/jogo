@@ -10,7 +10,7 @@ tela.fill((136, 76, 181))
 
 
 #JOGADOR ATRIBUTOS E TAL
-jogador = Jogadorjogo("zimagens/copo.png", 45, 50, 355, 450)
+jogador = Jogadorjogo("zimagens/copo.png", 45, 50, 355, 420)
 
 #CONFIGURAÇÃO PARA RODAR
 clock = pygame.time.Clock()
@@ -23,8 +23,11 @@ while rodando == True:
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             rodando = False
+    #LIMPANDO A TELA
+    tela.fill((136, 76, 181))
 
-    #JOGADOR APARECENDO
+    #JOGADOR APARECENDO e ANDANDO
+    jogador.movimento(pygame.K_LEFT, pygame.K_RIGHT)
     jogador.apareça(tela)
 
 
