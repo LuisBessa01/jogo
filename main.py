@@ -5,6 +5,9 @@ import pygame
 #CRIANDO A TELA
 tela = pygame.display.set_mode((800, 500))
 pygame.display.set_caption("Pega Doces")
+tela.fill((136, 76, 181))
+
+
 
 #CONFIGURAÇÃO PARA RODAR
 clock = pygame.time.Clock()
@@ -19,5 +22,9 @@ while rodando == True:
 
 
 
+
+
+    #TELA ATUALIZANDO
+    pygame.display.update()
     #FPS
     clock.tick(60)
