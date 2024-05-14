@@ -28,12 +28,12 @@ class Jogadorjogo:
         
         if tecla_apertada [esquerda]:
             if self.posição_x > 0: 
-                self.posição_x -= 5
+                self.posição_x -= 10
             else:
                 self.posição_x = 0
         if tecla_apertada [direita]:
             if self.posição_x < 800:
-                self.posição_x += 5
+                self.posição_x += 10
             else:
                 self.posição_x = 800 - self.largura
             

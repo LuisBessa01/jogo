@@ -3,6 +3,8 @@
 
 import pygame
 from jogadorbla import *
+from objetos import *
+import random
 #CRIANDO A TELA
 tela = pygame.display.set_mode((800, 500))
 pygame.display.set_caption("Pega Doces")
@@ -13,6 +15,12 @@ fundo = pygame.transform.scale(fundo,(800,500))
 
 #JOGADOR ATRIBUTOS E TAL
 jogador = Jogadorjogo("zimagens/copo.png", 45, 50, 355, 420)
+
+#LISTA DOS OBJETOS JOGADOS
+lista_objetos = [Doce("zimagens/doce1.png", 45, 50),
+        
+]
+obj = lista_objetos[0]
 
 #CONFIGURAÇÃO PARA RODAR
 clock = pygame.time.Clock()
@@ -33,6 +41,8 @@ while rodando == True:
     jogador.movimento(pygame.K_LEFT, pygame.K_RIGHT)
     jogador.apareça(tela)
 
+    obj.apareça(tela)
+    obj.movimento()
 
 
 
