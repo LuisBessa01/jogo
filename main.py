@@ -7,6 +7,8 @@ from jogadorbla import *
 tela = pygame.display.set_mode((800, 500))
 pygame.display.set_caption("Pega Doces")
 tela.fill((136, 76, 181))
+fundo = pygame.image.load("zimagens/fundo.png")
+fundo = pygame.transform.scale(fundo,(800,500))
 
 
 #JOGADOR ATRIBUTOS E TAL
@@ -25,6 +27,7 @@ while rodando == True:
             rodando = False
     #LIMPANDO A TELA
     tela.fill((136, 76, 181))
+    tela.blit(fundo, (0,0))
 
     #JOGADOR APARECENDO e ANDANDO
     jogador.movimento(pygame.K_LEFT, pygame.K_RIGHT)
