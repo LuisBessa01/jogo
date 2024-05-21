@@ -17,7 +17,9 @@ fundo = pygame.transform.scale(fundo,(800,500))
 pontos = 0
 
 fonte = pygame.font.SysFont("Arial", 20, True)
+fonte_derrota = pygame.font.SysFont("Arial", 50, True)
 
+perdeu = False
 #JOGADOR ATRIBUTOS E TAL
 jogador = Jogadorjogo("zimagens/copo.png", 45, 50, 355, 420)
 
@@ -54,6 +56,8 @@ while rodando == True:
     jogador.movimento(pygame.K_LEFT, pygame.K_RIGHT)
     jogador.apareça(tela)   
 
+    texto_derrota = fonte_derrota.render("VOCE PERDEU",True, (0,255,0))
+
     for objeto in lista_objetos:
         objeto.apareça(tela)
         objeto.movimento()
@@ -62,12 +66,16 @@ while rodando == True:
             if objeto.gostoso == True:
                 pontos += random.randint(5,15)
             else:
-                pontos -= 10
+                perdeu = True
             objeto.posição_y = 0-objeto.altura
             objeto.posição_x = random.randint(0,800-objeto.largura)
+
+
     texto_ponto = fonte.render(f"PONTOS:{pontos}", True, (0,255,0))
     tela.blit(texto_ponto, (0,5))
-
+    if perdeu == True:
+        tela.fill((0, 0, 0))
+        tela.blit (texto_derrota, (250, 200))
     #TELA ATUALIZANDO
     pygame.display.update()
     #FPS
