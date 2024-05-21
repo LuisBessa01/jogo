@@ -5,6 +5,9 @@ import pygame
 from jogadorbla import *
 from objetos import *
 import random
+
+pygame.init()
+
 #CRIANDO A TELA
 tela = pygame.display.set_mode((800, 500))
 pygame.display.set_caption("Pega Doces")
@@ -13,21 +16,23 @@ fundo = pygame.image.load("zimagens/fundo.png")
 fundo = pygame.transform.scale(fundo,(800,500))
 pontos = 0
 
+fonte = pygame.font.SysFont("Arial", 20, True)
+
 #JOGADOR ATRIBUTOS E TAL
 jogador = Jogadorjogo("zimagens/copo.png", 45, 50, 355, 420)
 
 #LISTA DOS OBJETOS JOGADOS
 
-bala1 = Doce("zimagens/doce1.png", 45, 50)
-bala2 = Doce("zimagens/doce1.png", 45, 50)
-bala3 = Doce("zimagens/doce1.png", 45, 50)
-bala4 = Doce("zimagens/doce1.png", 45, 50)
-bala5 = Doce("zimagens/doce1.png", 45, 50)
-vegetal1 = Vegetais("zimagens/brocolis.png", 45, 50)
-vegetal2 = Vegetais("zimagens/brocolis.png", 45, 50)
-vegetal3 = Vegetais("zimagens/brocolis.png", 45, 50)
 
-lista_objetos = [bala1,bala2,bala3,bala4,bala5,vegetal1,vegetal2,vegetal3]
+
+lista_objetos = [Doce("zimagens/doce1.png", 45, 50),
+                 Doce("zimagens/doce1.png", 45, 50),
+                 Doce("zimagens/doce1.png", 45, 50),
+                 Doce("zimagens/doce1.png", 45, 50),
+                 Vegetais("zimagens/brocolis.png", 45, 50),
+                 Vegetais("zimagens/brocolis.png", 45, 50),
+                 Vegetais("zimagens/brocolis.png", 45, 50),
+]
 
 #CONFIGURAÇÃO PARA RODAR
 clock = pygame.time.Clock()
@@ -54,12 +59,13 @@ while rodando == True:
 
         if jogador.mascara.overlap(objeto.mascara, (objeto.posição_x - jogador.posição_x , objeto.posição_y - jogador.posição_y)):
             if objeto.gostoso == True:
-                pontos += 10
+                pontos += random.randint(5,15)
             else:
                 pontos -= 10
             objeto.posição_y = 0-objeto.altura
             objeto.posição_x = random.randint(0,800-objeto.largura)
-
+    texto_ponto = fonte.render(f"PONTOS:{pontos}", True, (0,255,0))
+    tela.blit(texto_ponto, (0,5))
 
     #TELA ATUALIZANDO
     pygame.display.update()

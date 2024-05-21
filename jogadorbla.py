@@ -20,7 +20,8 @@ class Jogadorjogo:
 
         #MASCARA
         self.mascara = pygame.mask.from_surface(self.imagem)
-
+        #PODER!!!
+        self.limite = 0
 
 
     def apareça (self, tela):
