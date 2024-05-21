@@ -26,11 +26,12 @@ jogador = Jogadorjogo("zimagens/copo.png", 45, 50, 355, 420)
 
 
 lista_objetos = [Doce("zimagens/doce1.png", 45, 50),
-                 Doce("zimagens/doce1.png", 45, 50),
-                 Doce("zimagens/doce1.png", 45, 50),
-                 Doce("zimagens/doce1.png", 45, 50),
-                 Vegetais("zimagens/brocolis.png", 45, 50),
-                 Vegetais("zimagens/brocolis.png", 45, 50),
+                 Doce("zimagens/cupcake.png", 45, 50),
+                 Doce("zimagens/pirulito.png", 45, 50),
+                 Doce("zimagens/chiclete.png", 45, 50),
+                 Doce("zimagens/doce2.png", 45, 50),
+                 Vegetais("zimagens/alface.png", 45, 50),
+                 Vegetais("zimagens/cenoura.png", 45, 50),
                  Vegetais("zimagens/brocolis.png", 45, 50),
 ]
 
