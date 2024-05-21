@@ -11,7 +11,7 @@ pygame.display.set_caption("Pega Doces")
 tela.fill((136, 76, 181))
 fundo = pygame.image.load("zimagens/fundo.png")
 fundo = pygame.transform.scale(fundo,(800,500))
-
+pontos = 0
 
 #JOGADOR ATRIBUTOS E TAL
 jogador = Jogadorjogo("zimagens/copo.png", 45, 50, 355, 420)
@@ -51,6 +51,14 @@ while rodando == True:
     for objeto in lista_objetos:
         objeto.apareça(tela)
         objeto.movimento()
+
+        if jogador.mascara.overlap(objeto.mascara, (objeto.posição_x - jogador.posição_x , objeto.posição_y - jogador.posição_y)):
+            if objeto.gostoso == True:
+                pontos += 10
+            else:
+                pontos -= 10
+            objeto.posição_y = 0-objeto.altura
+            objeto.posição_x = random.randint(0,800-objeto.largura)
 
 
     #TELA ATUALIZANDO

@@ -15,7 +15,7 @@ class Doce:
         
         self.posição_x = random.randint(0,800-self.largura)
         self.posição_y = 0-self.altura
-
+        self.gostoso = True
         #MASCARA
         self.mascara = pygame.mask.from_surface(self.imagem)
 
@@ -43,7 +43,7 @@ class Vegetais:
         
         self.posição_x = random.randint(0,800-self.largura)
         self.posição_y = 0-self.altura
-
+        self.gostoso = False
 
         #MASCARA
         self.mascara = pygame.mask.from_surface(self.imagem)
